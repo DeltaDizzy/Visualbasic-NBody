@@ -1,0 +1,12 @@
+C:\Users\312679\source\repos\3Bodyproblem\3Bodyproblem\bin\Debug\3Bodyproblem.exe.config
+C:\Users\312679\source\repos\3Bodyproblem\3Bodyproblem\bin\Debug\3Bodyproblem.exe
+C:\Users\312679\source\repos\3Bodyproblem\3Bodyproblem\bin\Debug\3Bodyproblem.pdb
+C:\Users\312679\source\repos\3Bodyproblem\3Bodyproblem\bin\Debug\3Bodyproblem.xml
+C:\Users\312679\source\repos\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.vbprojAssemblyReference.cache
+C:\Users\312679\source\repos\3Bodyproblem\3Bodyproblem\obj\Debug\_3Bodyproblem.Form1.resources
+C:\Users\312679\source\repos\3Bodyproblem\3Bodyproblem\obj\Debug\_3Bodyproblem.Resources.resources
+C:\Users\312679\source\repos\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.vbproj.GenerateResource.cache
+C:\Users\312679\source\repos\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.vbproj.CoreCompileInputs.cache
+C:\Users\312679\source\repos\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.exe
+C:\Users\312679\source\repos\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.xml
+C:\Users\312679\source\repos\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.pdb
