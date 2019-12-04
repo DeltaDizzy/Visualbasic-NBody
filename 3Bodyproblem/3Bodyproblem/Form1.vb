@@ -6,22 +6,22 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         b1 = New Body(100, 100, 0, 0, 12, Color.Blue)
         b2 = New Body(200, 150, 0, 0, 14, Color.Brown)
-        b3 = New Body(300, 90, 0, 0, 13, Color.Yellow)
+        b3 = New Body(250, 90, 0, 0, 13, Color.Yellow)
         bodies.Add(b1)
         bodies.Add(b2)
         bodies.Add(b3)
     End Sub
 
     Private Sub draw(b As Body)
-        graph.FillEllipse(Brushes.Black, CSng(b.px), CSng(b.py), 7, 7)
+        graph.FillEllipse(Brushes.Black, CSng(b.px), CSng(b.py), 70, 70)
     End Sub
     Private Sub TmrIntegrator_Tick(sender As Object, e As EventArgs) Handles tmrIntegrator.Tick
         lblCOords.Text = Cursor.Position.ToString
         If bodies.Count > 0 Then
             For Each b As Body In bodies
                 draw(b)
-            b.update()
-            b.Loocation = New Point(b.px, b.py)
+                b.update(tmrIntegrator.Interval)
+                'b.Loocation = New Point(b.px, b.py)
             Next
         End If
     End Sub
