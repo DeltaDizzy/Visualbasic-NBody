@@ -20,6 +20,8 @@
         If bodies.Count > 0 Then
             For Each b As Body In bodies
                 draw(b)
+            b.update()
+            b.Loocation = New Point(b.px, b.py)
             Next
         End If
     End Sub
