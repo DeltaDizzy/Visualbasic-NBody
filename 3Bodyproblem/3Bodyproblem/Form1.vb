@@ -13,7 +13,7 @@
     End Sub
 
     Private Sub draw(b As Body)
-        graph.DrawEllipse(pen, CSng(b.px), CSng(b.py), 7, 7)
+        graph.FillEllipse(Brushes.Black, CSng(b.px), CSng(b.py), 7, 7)
     End Sub
     Private Sub TmrIntegrator_Tick(sender As Object, e As EventArgs) Handles tmrIntegrator.Tick
         lblCOords.Text = Cursor.Position.ToString
