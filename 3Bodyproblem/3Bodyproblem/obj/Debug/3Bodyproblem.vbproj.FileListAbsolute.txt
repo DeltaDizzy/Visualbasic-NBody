@@ -10,15 +10,3 @@ C:\Users\312679\source\repos\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.vb
 C:\Users\312679\source\repos\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.exe
 C:\Users\312679\source\repos\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.xml
 C:\Users\312679\source\repos\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.pdb
-E:\GitHub\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\bin\Debug\3Bodyproblem.exe.config
-E:\GitHub\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\bin\Debug\3Bodyproblem.exe
-E:\GitHub\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\bin\Debug\3Bodyproblem.pdb
-E:\GitHub\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\bin\Debug\3Bodyproblem.xml
-E:\GitHub\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\_3Bodyproblem.Form1.resources
-E:\GitHub\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\_3Bodyproblem.Resources.resources
-E:\GitHub\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.vbproj.GenerateResource.Cache
-E:\GitHub\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.vbproj.CoreCompileInputs.cache
-E:\GitHub\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.exe
-E:\GitHub\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.xml
-E:\GitHub\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.pdb
-E:\GitHub\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.vbprojResolveAssemblyReference.cache
