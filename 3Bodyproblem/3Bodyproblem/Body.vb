@@ -1,9 +1,7 @@
 ﻿Imports System.Drawing.Color
 Imports System.Numerics
 Public Class Body
-    Dim G As Double = 0.00000000006679 ' universal grav constant
-    Public px, py As Double ' x and y positions
-    Dim vx, vy As Double ' x and y velocities
+    Dim G As Double = 0.6679 ' universal grav constant
     Dim fx, fy As Double ' forces
     Dim mass As Double ' body mass
     Dim size As Double
@@ -13,44 +11,45 @@ Public Class Body
     Dim ID As Integer
     Dim f As Double
     Public pos As Vector2
+    Public vel As Vector2
+    Public target As Body
+    Dim a As Double
 
-    Public Sub New(px As Double, py As Double, vx As Double, vy As Double, mass As Double, color As Color, id As Integer)
-        Me.px = px
-        Me.py = py
-        Me.vx = vx
-        Me.vy = vy
+    Public Sub New(pos As Vector2, vel As Vector2, mass As Double, color As Color, id As Integer)
+        Me.pos = pos
+        Me.vel = vel
         Me.mass = mass
         Me.color = color
         Me.ID = id
-        pos.X = px
-        pos.Y = py
     End Sub
 
     Public Sub update(dt As Double)
-        r2 = px * px + py * py
-        r3 = r2 * Math.Sqrt(r2)
-
-        fx = -px / r3
-        fy = -py / r3
-
-        px += vx * dt
-        py += vy * dt
-
-        vx += fx * dt
-        vy += fy * dt
+        vel += CalculateAcceleration() * dt
+        pos += vel * dt
 
     End Sub
 
+    Function CalculateAcceleration()
+        Return GetNormal(GetDirection(target)) * (G * (Me.mass * target.mass) / Math.Pow(GetDistance(target), 2))
+    End Function
+
     Function CalculateForce(body As Body)
         f = G * ((Me.mass * body.mass) / Math.Pow(GetDistance(body), 2))
+        Return f
     End Function
 
     Function GetDistance(body As Body)
-        Return Math.Sqrt(Math.Pow((body.px - Me.px), 2) + Math.Pow((body.py - Me.py), 2))
+        Return Vector2.Distance(Me.pos, body.pos)
     End Function
 
     Function GetDirection(body As Body)
+        Dim dir As Vector2
+        dir = body.pos - Me.pos
+        Return dir
+    End Function
 
+    Function GetNormal(v As Vector2)
+        Return Vector2.Normalize(v)
     End Function
 
     Public Shared Operator =(ByVal b1 As Body, ByVal b2 As Body)
@@ -69,3 +68,5 @@ Public Class Body
         End If
     End Operator
 End Class
+
+' TODO: f
