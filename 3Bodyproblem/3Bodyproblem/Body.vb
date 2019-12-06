@@ -4,7 +4,7 @@ Public Class Body
     Dim G As Double = 0.6679 ' universal grav constant
     Dim fx, fy As Double ' forces
     Dim mass As Double ' body mass
-    Dim size As Double
+    Public size As Single = 70
     Dim r2 As Double
     Dim r3 As Double
     Dim color As Color
@@ -14,19 +14,35 @@ Public Class Body
     Public vel As Vector2
     Public target As Body
     Dim a As Double
+    Dim bound As Rectangle
+    Public enabled As Boolean = True
+    Public Sub New(pos As Vector2, vel As Vector2, mass As Double, size As Single, color As Color, id As Integer)
+        Me.pos = pos
+        Me.vel = vel
+        Me.mass = mass
+        Me.color = color
+        Me.size = size
+        Me.ID = id
+    End Sub
 
     Public Sub New(pos As Vector2, vel As Vector2, mass As Double, color As Color, id As Integer)
         Me.pos = pos
         Me.vel = vel
         Me.mass = mass
         Me.color = color
+        Me.size = size
         Me.ID = id
     End Sub
 
     Public Sub update(dt As Double)
-        vel += CalculateAcceleration() * dt
-        pos += vel * dt
-
+        If enabled Then
+            vel += CalculateAcceleration() * 0.5 * dt
+            pos += vel * dt
+            vel += CalculateAcceleration() * 0.5 * dt
+            If IsColliding(target) Then
+                target.enabled = False
+            End If
+        End If
     End Sub
 
     Function CalculateAcceleration()
@@ -38,8 +54,19 @@ Public Class Body
         Return f
     End Function
 
+    Function IsColliding(body As Body)
+        Dim dist = GetDistance(body)
+        Dim targetRadius = body.size
+        If Math.Pow(dist, 2) < Math.Pow((Me.size + body.size), 2) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
     Function GetDistance(body As Body)
         Return Vector2.Distance(Me.pos, body.pos)
+
     End Function
 
     Function GetDirection(body As Body)
@@ -47,7 +74,6 @@ Public Class Body
         dir = body.pos - Me.pos
         Return dir
     End Function
-
     Function GetNormal(v As Vector2)
         Return Vector2.Normalize(v)
     End Function
@@ -69,4 +95,4 @@ Public Class Body
     End Operator
 End Class
 
-' TODO: f
+' TODO: for each body, calculate force and add to current force, then apply

@@ -22,3 +22,15 @@ E:\GitHub\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.vbp
 E:\GitHub\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.exe
 E:\GitHub\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.xml
 E:\GitHub\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.pdb
+C:\Programming232\3Bodyproblem\3Bodyproblem\bin\Debug\3Bodyproblem.exe.config
+C:\Programming232\3Bodyproblem\3Bodyproblem\bin\Debug\3Bodyproblem.exe
+C:\Programming232\3Bodyproblem\3Bodyproblem\bin\Debug\3Bodyproblem.pdb
+C:\Programming232\3Bodyproblem\3Bodyproblem\bin\Debug\3Bodyproblem.xml
+C:\Programming232\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.vbprojAssemblyReference.cache
+C:\Programming232\3Bodyproblem\3Bodyproblem\obj\Debug\_3Bodyproblem.Form1.resources
+C:\Programming232\3Bodyproblem\3Bodyproblem\obj\Debug\_3Bodyproblem.Resources.resources
+C:\Programming232\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.vbproj.GenerateResource.cache
+C:\Programming232\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.vbproj.CoreCompileInputs.cache
+C:\Programming232\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.exe
+C:\Programming232\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.xml
+C:\Programming232\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.pdb

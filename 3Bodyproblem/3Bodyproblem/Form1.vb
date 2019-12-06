@@ -1,7 +1,7 @@
 ﻿Imports System.Numerics
 Public Class Form1
     Dim pen As New System.Drawing.Pen(Brushes.Black)
-    Dim bodies As List(Of Body) = New List(Of Body)
+    Public bodies As List(Of Body) = New List(Of Body)
     Dim b1, b2, b3 As Body
     Dim currentBody As Body
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -15,11 +15,21 @@ Public Class Form1
         'bodies.Add(b3)
     End Sub
 
+    Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.Escape Then
+            tmrIntegrator.Enabled = Not tmrIntegrator.Enabled
+        End If
+    End Sub
+
     Private Sub Form1_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
 
         For Each b As Body In bodies
-            e.Graphics.FillEllipse(Brushes.Aqua, CSng(b.pos.X), CSng(b.pos.Y), 70, 70)
+            e.Graphics.FillEllipse(Brushes.Aqua, CSng(b.pos.X), CSng(b.pos.Y), b.size, b.size)
             b.update(1)
+            If b.enabled = False Then
+                bodies.Remove(b)
+                bodies(bodies.IndexOf(b) + 1).target = bodies(bodies.IndexOf(b) + 1)
+            End If
         Next
 
     End Sub
@@ -29,3 +39,5 @@ Public Class Form1
         Me.Invalidate()
     End Sub
 End Class
+
+' TODO if body and target collide, they

@@ -35,21 +35,20 @@ Partial Class Form1
         'lblCOords
         '
         Me.lblCOords.AutoSize = True
-        Me.lblCOords.Location = New System.Drawing.Point(16, 11)
-        Me.lblCOords.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCOords.Location = New System.Drawing.Point(12, 9)
         Me.lblCOords.Name = "lblCOords"
-        Me.lblCOords.Size = New System.Drawing.Size(51, 17)
+        Me.lblCOords.Size = New System.Drawing.Size(39, 13)
         Me.lblCOords.TabIndex = 0
         Me.lblCOords.Text = "Label1"
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1067, 554)
+        Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.lblCOords)
         Me.DoubleBuffered = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.KeyPreview = True
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
