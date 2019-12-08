@@ -34,3 +34,15 @@ C:\Programming232\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.vbproj.CoreCo
 C:\Programming232\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.exe
 C:\Programming232\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.xml
 C:\Programming232\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.pdb
+C:\Users\castl\Desktop\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\bin\Debug\3Bodyproblem.exe.config
+C:\Users\castl\Desktop\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\bin\Debug\3Bodyproblem.exe
+C:\Users\castl\Desktop\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\bin\Debug\3Bodyproblem.pdb
+C:\Users\castl\Desktop\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\bin\Debug\3Bodyproblem.xml
+C:\Users\castl\Desktop\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.vbprojAssemblyReference.cache
+C:\Users\castl\Desktop\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\_3Bodyproblem.Form1.resources
+C:\Users\castl\Desktop\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\_3Bodyproblem.Resources.resources
+C:\Users\castl\Desktop\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.vbproj.GenerateResource.cache
+C:\Users\castl\Desktop\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.vbproj.CoreCompileInputs.cache
+C:\Users\castl\Desktop\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.exe
+C:\Users\castl\Desktop\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.xml
+C:\Users\castl\Desktop\Visualbasic-NBody\3Bodyproblem\3Bodyproblem\obj\Debug\3Bodyproblem.pdb
