@@ -4,14 +4,25 @@ Public Class Body
     Dim G As Double = 0.0006679 ' universal grav constant
     Dim mass As Double ' body mass
     Public size As Single = 70
+<<<<<<< Updated upstream
+=======
+    Dim r2 As Double
+    Dim r3 As Double
+>>>>>>> Stashed changes
     Public color As Brush
     Dim ID As Integer
     Dim f As Double
     Public pos As Vector2
     Public vel As Vector2
     Dim bound As Rectangle
+<<<<<<< Updated upstream
 
     Public Sub New(pos As Vector2, vel As Vector2, mass As Double, size As Single, color As Brush, id As Integer)
+=======
+    Public gravEnabled As Boolean = True
+
+    Public Sub New(pos As Vector2, vel As Vector2, mass As Double, gravEnabled As Boolean, size As Single, color As Brush, id As Integer)
+>>>>>>> Stashed changes
         Me.pos = pos
         Me.vel = vel
         Me.mass = mass
@@ -20,7 +31,11 @@ Public Class Body
         Me.ID = id
     End Sub
 
+<<<<<<< Updated upstream
     Public Sub New(pos As Vector2, vel As Vector2, mass As Double, color As Brush, id As Integer)
+=======
+    Public Sub New(pos As Vector2, vel As Vector2, mass As Double, gravEnabled As Boolean, color As Brush, id As Integer)
+>>>>>>> Stashed changes
         Me.pos = pos
         Me.vel = vel
         Me.mass = mass
@@ -30,11 +45,20 @@ Public Class Body
     End Sub
 
     Public Sub update(dt As Double)
+<<<<<<< Updated upstream
         vel += CalculateAcceleration(Form1.bodies) * 0.5 * dt
         pos += vel * dt
         vel += CalculateAcceleration(Form1.bodies) * 0.5 * dt
         Console.WriteLine($"{Me.color} - vel {vel.ToString}")
         Console.WriteLine($"{Me.color} - acc {CalculateAcceleration(Form1.bodies) * 0.5 * dt}")
+=======
+        If gravEnabled Then
+            vel += CalculateAcceleration() * 0.5 * dt
+            pos += vel * dt
+            Console.WriteLine($"{Me.ID} - {Me.vel.ToString}")
+            vel += CalculateAcceleration() * 0.5 * dt
+        End If
+>>>>>>> Stashed changes
     End Sub
 
     Function CalculateAcceleration(bodies As List(Of Body))
@@ -86,3 +110,4 @@ Public Class Body
 End Class
 
 ' TODO: for each body, calculate force and add to current force, then apply
+' TODO: refactor into point masses orbiting sun
