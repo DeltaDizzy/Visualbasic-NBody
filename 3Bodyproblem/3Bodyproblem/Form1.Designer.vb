@@ -51,6 +51,7 @@ Partial Class Form1
         Me.KeyPreview = True
         Me.Name = "Form1"
         Me.Text = "Form1"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

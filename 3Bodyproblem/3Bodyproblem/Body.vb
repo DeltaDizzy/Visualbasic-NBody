@@ -1,28 +1,19 @@
-﻿Imports System.Drawing.Color
+﻿
 Imports System.Numerics
 Public Class Body
-    Dim G As Double = 0.0006679 ' universal grav constant
-    Dim mass As Double ' body mass
+    Dim G As Double = 0.6679 ' universal grav constant
+    Public mass As Double ' body mass
     Public size As Single = 70
-<<<<<<< Updated upstream
-=======
-    Dim r2 As Double
-    Dim r3 As Double
->>>>>>> Stashed changes
     Public color As Brush
     Dim ID As Integer
     Dim f As Double
+    Public a As Vector2
     Public pos As Vector2
     Public vel As Vector2
+    Public target As Body
     Dim bound As Rectangle
-<<<<<<< Updated upstream
-
+    Public enabled As Boolean = True
     Public Sub New(pos As Vector2, vel As Vector2, mass As Double, size As Single, color As Brush, id As Integer)
-=======
-    Public gravEnabled As Boolean = True
-
-    Public Sub New(pos As Vector2, vel As Vector2, mass As Double, gravEnabled As Boolean, size As Single, color As Brush, id As Integer)
->>>>>>> Stashed changes
         Me.pos = pos
         Me.vel = vel
         Me.mass = mass
@@ -31,11 +22,7 @@ Public Class Body
         Me.ID = id
     End Sub
 
-<<<<<<< Updated upstream
     Public Sub New(pos As Vector2, vel As Vector2, mass As Double, color As Brush, id As Integer)
-=======
-    Public Sub New(pos As Vector2, vel As Vector2, mass As Double, gravEnabled As Boolean, color As Brush, id As Integer)
->>>>>>> Stashed changes
         Me.pos = pos
         Me.vel = vel
         Me.mass = mass
@@ -45,36 +32,32 @@ Public Class Body
     End Sub
 
     Public Sub update(dt As Double)
-<<<<<<< Updated upstream
-        vel += CalculateAcceleration(Form1.bodies) * 0.5 * dt
-        pos += vel * dt
-        vel += CalculateAcceleration(Form1.bodies) * 0.5 * dt
-        Console.WriteLine($"{Me.color} - vel {vel.ToString}")
-        Console.WriteLine($"{Me.color} - acc {CalculateAcceleration(Form1.bodies) * 0.5 * dt}")
-=======
-        If gravEnabled Then
-            vel += CalculateAcceleration() * 0.5 * dt
+        If enabled Then
+            vel += CalculateAcceleration(Form1.bodies) * 0.5 * dt
             pos += vel * dt
-            Console.WriteLine($"{Me.ID} - {Me.vel.ToString}")
-            vel += CalculateAcceleration() * 0.5 * dt
+            vel += CalculateAcceleration(Form1.bodies) * 0.5 * dt
         End If
->>>>>>> Stashed changes
     End Sub
 
     Function CalculateAcceleration(bodies As List(Of Body))
-        Dim a As Vector2 = Vector2.Zero
+        a = Vector2.Zero
         For Each b As Body In bodies
             If b <> Me Then
-                a += (GetNormal(GetDirection(b)) * (G * (Me.mass * b.mass) / Math.Pow(GetDistance(b), 2)))
+                a += GetNormal(GetDirection(b)) * (G * (Me.mass * b.mass) / Math.Pow(GetDistance(b), 2))
             End If
         Next
         Return a
     End Function
 
-    Function IsColliding(body As Body)
-        Dim dist = GetDistance(body)
-        Dim targetRadius = body.size
-        If Math.Pow(dist, 2) < Math.Pow((Me.size + body.size), 2) Then
+    Function CalculateForce(body As Body)
+        f = G * ((Me.mass * body.mass) / Math.Pow(GetDistance(body), 2))
+        Return f
+    End Function
+
+    Public Function IsColliding(b As Body)
+        Dim dist = GetDistance(b)
+        Dim targetRadius = b.size
+        If dist < Me.size + b.size Then
             Return True
         Else
             Return False
@@ -83,10 +66,13 @@ Public Class Body
 
     Function GetDistance(body As Body)
         Return Vector2.Distance(Me.pos, body.pos)
+
     End Function
 
     Function GetDirection(body As Body)
-        Return body.pos - Me.pos
+        Dim dir As Vector2
+        dir = body.pos - Me.pos
+        Return dir
     End Function
     Function GetNormal(v As Vector2)
         Return Vector2.Normalize(v)
@@ -110,4 +96,3 @@ Public Class Body
 End Class
 
 ' TODO: for each body, calculate force and add to current force, then apply
-' TODO: refactor into point masses orbiting sun
