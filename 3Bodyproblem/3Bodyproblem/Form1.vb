@@ -3,15 +3,23 @@ Public Class Form1
     Public bodies As List(Of Body) = New List(Of Body)
     Dim b1, b2, sun As Body
     Dim currentBody As Body
+    Dim colors As New List(Of Brush)
+    Dim r As Random = New Random()
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        b1 = New Body(New Vector2(300, 300), New Vector2(-4, 3), 200, 70, Brushes.Black, 1)
-        b2 = New Body(New Vector2(600, 450), New Vector2(4, -3), 200, 70, Brushes.Brown, 2)
+        b1 = New Body(New Vector2(300, 300), New Vector2(-4, 3), 200, 70, RndColor(r.Next), 1)
+        b2 = New Body(New Vector2(600, 450), New Vector2(4, -3), 200, 70, RndColor(r.Next), 2)
         'sun = New Body(New Vector2(300, 90), New Vector2(0, 0), 130, Brushes.Yellow, 3)
         bodies.Add(b1)
         bodies.Add(b2)
         'bodies.Add(sun)
     End Sub
-
+    Function RndColor(seed As Integer)
+        Dim red As Integer = r.Next(0, Byte.MaxValue + 1)
+        Dim green As Integer = r.Next(0, Byte.MaxValue + 1)
+        Dim blue As Integer = r.Next(0, Byte.MaxValue + 1)
+        Dim brush As Brush = New SolidBrush(Color.FromArgb(red, green, blue))
+        Return brush
+    End Function
     Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.Escape Then
             tmrIntegrator.Enabled = Not tmrIntegrator.Enabled
@@ -43,6 +51,15 @@ Public Class Form1
 
     Private Sub TmrIntegrator_Tick(sender As Object, e As EventArgs) Handles tmrIntegrator.Tick
         lblCOords.Text = Cursor.Position.ToString
+        For Each b As Body In bodies
+            'If b.IsColliding Then
+            'Merge(b, b.collider)
+            'End If
+            b.distanceList.Clear()
+            For Each c As Body In bodies
+                b.distanceList.Add(c, b.GetDistance(c))
+            Next
+        Next
         Me.Invalidate()
     End Sub
 
@@ -54,4 +71,4 @@ Public Class Form1
     End Sub
 End Class
 
-' TODO if body and target collide, they Merge()
+' TODO have up to date list of every body's distances to every other body

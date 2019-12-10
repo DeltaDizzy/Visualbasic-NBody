@@ -12,7 +12,8 @@ Public Class Body
     Public vel As Vector2
     Public target As Body
     Dim bound As Rectangle
-    Public enabled As Boolean = True
+    Public collider As Body
+    Public distanceList As New Dictionary(Of Body, Single)
     Public Sub New(pos As Vector2, vel As Vector2, mass As Double, size As Single, color As Brush, id As Integer)
         Me.pos = pos
         Me.vel = vel
@@ -32,11 +33,10 @@ Public Class Body
     End Sub
 
     Public Sub update(dt As Double)
-        If enabled Then
-            vel += CalculateAcceleration(Form1.bodies) * 0.5 * dt
-            pos += vel * dt
-            vel += CalculateAcceleration(Form1.bodies) * 0.5 * dt
-        End If
+        vel += CalculateAcceleration(Form1.bodies) * 0.5 * dt
+        pos += vel * dt
+        vel += CalculateAcceleration(Form1.bodies) * 0.5 * dt
+
     End Sub
 
     Function CalculateAcceleration(bodies As List(Of Body))
@@ -54,10 +54,14 @@ Public Class Body
         Return f
     End Function
 
-    Public Function IsColliding(b As Body)
-        Dim dist = GetDistance(b)
-        Dim targetRadius = b.size
-        If dist < Me.size + b.size Then
+    Public Function IsColliding()
+        collider = From body In distanceList
+                   Order By
+                   Select body
+        ' todo : orderby distance to body
+        Dim dist = GetDistance(collider)
+        Dim targetRadius = collider.size
+        If dist < Me.size + collider.size Then
             Return True
         Else
             Return False
