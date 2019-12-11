@@ -25,6 +25,8 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Me.tmrIntegrator = New System.Windows.Forms.Timer(Me.components)
         Me.lblCOords = New System.Windows.Forms.Label()
+        Me.lblCollide = New System.Windows.Forms.Label()
+        Me.lblDistances = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'tmrIntegrator
@@ -41,11 +43,31 @@ Partial Class Form1
         Me.lblCOords.TabIndex = 0
         Me.lblCOords.Text = "Label1"
         '
+        'lblCollide
+        '
+        Me.lblCollide.AutoSize = True
+        Me.lblCollide.Location = New System.Drawing.Point(149, 9)
+        Me.lblCollide.Name = "lblCollide"
+        Me.lblCollide.Size = New System.Drawing.Size(39, 13)
+        Me.lblCollide.TabIndex = 1
+        Me.lblCollide.Text = "Label1"
+        '
+        'lblDistances
+        '
+        Me.lblDistances.AutoSize = True
+        Me.lblDistances.Location = New System.Drawing.Point(344, 9)
+        Me.lblDistances.Name = "lblDistances"
+        Me.lblDistances.Size = New System.Drawing.Size(39, 13)
+        Me.lblDistances.TabIndex = 2
+        Me.lblDistances.Text = "Label1"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.lblDistances)
+        Me.Controls.Add(Me.lblCollide)
         Me.Controls.Add(Me.lblCOords)
         Me.DoubleBuffered = True
         Me.KeyPreview = True
@@ -59,4 +81,6 @@ Partial Class Form1
 
     Friend WithEvents tmrIntegrator As Timer
     Friend WithEvents lblCOords As Label
+    Friend WithEvents lblCollide As Label
+    Friend WithEvents lblDistances As Label
 End Class

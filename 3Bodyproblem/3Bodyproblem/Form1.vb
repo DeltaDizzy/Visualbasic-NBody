@@ -7,7 +7,7 @@ Public Class Form1
     Dim r As Random = New Random()
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         b1 = New Body(New Vector2(300, 300), New Vector2(-4, 3), 200, 70, RndColor(r.Next), 1)
-        b2 = New Body(New Vector2(600, 450), New Vector2(4, -3), 200, 70, RndColor(r.Next), 2)
+        b2 = New Body(New Vector2(600, 450), New Vector2(4, -1), 200, 70, RndColor(r.Next), 2)
         'sun = New Body(New Vector2(300, 90), New Vector2(0, 0), 130, Brushes.Yellow, 3)
         bodies.Add(b1)
         bodies.Add(b2)
@@ -44,7 +44,15 @@ Public Class Form1
 
         For Each b As Body In bodies
             e.Graphics.FillEllipse(b.color, b.pos.X, b.pos.Y, b.size, b.size)
-            b.update(1)
+            b.update(0.01)
+            lblDistances.Text = $"{b1.pos.ToString} - {b1.color}"
+            If b.distanceList.Count <> 0 Then
+                If b.IsColliding Then
+                    lblCollide.Text = "True"
+                Else
+                    lblCollide.Text = "False"
+                End If
+            End If
         Next
 
     End Sub
@@ -52,12 +60,9 @@ Public Class Form1
     Private Sub TmrIntegrator_Tick(sender As Object, e As EventArgs) Handles tmrIntegrator.Tick
         lblCOords.Text = Cursor.Position.ToString
         For Each b As Body In bodies
-            'If b.IsColliding Then
-            'Merge(b, b.collider)
-            'End If
             b.distanceList.Clear()
             For Each c As Body In bodies
-                b.distanceList.Add(c, b.GetDistance(c))
+                b.distanceList.Add(b.GetDistance(c), c)
             Next
         Next
         Me.Invalidate()
