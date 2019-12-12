@@ -25,8 +25,9 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Me.tmrIntegrator = New System.Windows.Forms.Timer(Me.components)
         Me.lblCOords = New System.Windows.Forms.Label()
-        Me.lblCollide = New System.Windows.Forms.Label()
-        Me.lblDistances = New System.Windows.Forms.Label()
+        Me.lblzoom = New System.Windows.Forms.Label()
+        Me.tbScroll = New System.Windows.Forms.TrackBar()
+        CType(Me.tbScroll, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tmrIntegrator
@@ -37,47 +38,47 @@ Partial Class Form1
         'lblCOords
         '
         Me.lblCOords.AutoSize = True
-        Me.lblCOords.Location = New System.Drawing.Point(16, 11)
-        Me.lblCOords.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCOords.Location = New System.Drawing.Point(12, 9)
         Me.lblCOords.Name = "lblCOords"
-        Me.lblCOords.Size = New System.Drawing.Size(51, 17)
+        Me.lblCOords.Size = New System.Drawing.Size(39, 13)
         Me.lblCOords.TabIndex = 0
         Me.lblCOords.Text = "Label1"
         '
-        'lblCollide
+        'lblzoom
         '
-        Me.lblCollide.AutoSize = True
-        Me.lblCollide.Location = New System.Drawing.Point(199, 11)
-        Me.lblCollide.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblCollide.Name = "lblCollide"
-        Me.lblCollide.Size = New System.Drawing.Size(51, 17)
-        Me.lblCollide.TabIndex = 1
-        Me.lblCollide.Text = "Label1"
+        Me.lblzoom.AutoSize = True
+        Me.lblzoom.Location = New System.Drawing.Point(164, 9)
+        Me.lblzoom.Name = "lblzoom"
+        Me.lblzoom.Size = New System.Drawing.Size(39, 13)
+        Me.lblzoom.TabIndex = 1
+        Me.lblzoom.Text = "Label1"
         '
-        'lblDistances
+        'tbScroll
         '
-        Me.lblDistances.AutoSize = True
-        Me.lblDistances.Location = New System.Drawing.Point(459, 11)
-        Me.lblDistances.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblDistances.Name = "lblDistances"
-        Me.lblDistances.Size = New System.Drawing.Size(51, 17)
-        Me.lblDistances.TabIndex = 2
-        Me.lblDistances.Text = "Label1"
+        Me.tbScroll.Enabled = False
+        Me.tbScroll.Location = New System.Drawing.Point(420, 12)
+        Me.tbScroll.Maximum = 100
+        Me.tbScroll.Minimum = 1
+        Me.tbScroll.Name = "tbScroll"
+        Me.tbScroll.Size = New System.Drawing.Size(368, 45)
+        Me.tbScroll.TabIndex = 2
+        Me.tbScroll.TickFrequency = 10
+        Me.tbScroll.Value = 3
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1067, 554)
-        Me.Controls.Add(Me.lblDistances)
-        Me.Controls.Add(Me.lblCollide)
+        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.tbScroll)
+        Me.Controls.Add(Me.lblzoom)
         Me.Controls.Add(Me.lblCOords)
         Me.DoubleBuffered = True
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        CType(Me.tbScroll, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -85,6 +86,6 @@ Partial Class Form1
 
     Friend WithEvents tmrIntegrator As Timer
     Friend WithEvents lblCOords As Label
-    Friend WithEvents lblCollide As Label
-    Friend WithEvents lblDistances As Label
+    Friend WithEvents lblzoom As Label
+    Friend WithEvents tbScroll As TrackBar
 End Class
