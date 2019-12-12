@@ -37,40 +37,44 @@ Partial Class Form1
         'lblCOords
         '
         Me.lblCOords.AutoSize = True
-        Me.lblCOords.Location = New System.Drawing.Point(12, 9)
+        Me.lblCOords.Location = New System.Drawing.Point(16, 11)
+        Me.lblCOords.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCOords.Name = "lblCOords"
-        Me.lblCOords.Size = New System.Drawing.Size(39, 13)
+        Me.lblCOords.Size = New System.Drawing.Size(51, 17)
         Me.lblCOords.TabIndex = 0
         Me.lblCOords.Text = "Label1"
         '
         'lblCollide
         '
         Me.lblCollide.AutoSize = True
-        Me.lblCollide.Location = New System.Drawing.Point(149, 9)
+        Me.lblCollide.Location = New System.Drawing.Point(199, 11)
+        Me.lblCollide.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCollide.Name = "lblCollide"
-        Me.lblCollide.Size = New System.Drawing.Size(39, 13)
+        Me.lblCollide.Size = New System.Drawing.Size(51, 17)
         Me.lblCollide.TabIndex = 1
         Me.lblCollide.Text = "Label1"
         '
         'lblDistances
         '
         Me.lblDistances.AutoSize = True
-        Me.lblDistances.Location = New System.Drawing.Point(344, 9)
+        Me.lblDistances.Location = New System.Drawing.Point(459, 11)
+        Me.lblDistances.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDistances.Name = "lblDistances"
-        Me.lblDistances.Size = New System.Drawing.Size(39, 13)
+        Me.lblDistances.Size = New System.Drawing.Size(51, 17)
         Me.lblDistances.TabIndex = 2
         Me.lblDistances.Text = "Label1"
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1067, 554)
         Me.Controls.Add(Me.lblDistances)
         Me.Controls.Add(Me.lblCollide)
         Me.Controls.Add(Me.lblCOords)
         Me.DoubleBuffered = True
         Me.KeyPreview = True
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

@@ -44,10 +44,11 @@ Public Class Form1
 
         For Each b As Body In bodies
             e.Graphics.FillEllipse(b.color, b.pos.X, b.pos.Y, b.size, b.size)
-            b.update(0.01)
+            b.update(1)
             lblDistances.Text = $"{b1.pos.ToString} - {b1.color}"
+            e.Graphics.FillEllipse(Brushes.Aquamarine, b.realPos.X, b.realPos.Y, 7, 7)
             If b.distanceList.Count <> 0 Then
-                If b.IsColliding Then
+                If b.IsColliding(b.distanceList(b.distanceList.Keys.Min)) Then
                     lblCollide.Text = "True"
                 Else
                     lblCollide.Text = "False"
@@ -55,6 +56,15 @@ Public Class Form1
             End If
         Next
 
+    End Sub
+    Private Sub AddBody()
+        Dim pos As Point = Cursor.Position
+        Dim bnew As Body = New Body(New Vector2(pos.X, pos.Y), New Vector2(r.Next(-5, 5), r.Next(-5, 5)), r.Next(1, 2000), RndColor(r.Next(Integer.MaxValue)), bodies.Count + 1)
+        bodies.Add(bnew)
+    End Sub
+
+    Private Sub Form1_MouseClick(sender As Object, e As MouseEventArgs) Handles MyBase.MouseClick
+        AddBody()
     End Sub
 
     Private Sub TmrIntegrator_Tick(sender As Object, e As EventArgs) Handles tmrIntegrator.Tick

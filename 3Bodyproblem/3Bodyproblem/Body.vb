@@ -13,7 +13,7 @@ Public Class Body
     Public target As Body
     Dim bound As Rectangle
     Public collider As Body
-    Public colPos As Vector2
+    Public realPos As Vector2
     Public distanceList As New Dictionary(Of Single, Body)
     'Public distanceList As New List(Of Single)
     Public Sub New(pos As Vector2, vel As Vector2, mass As Double, size As Single, color As Brush, id As Integer)
@@ -38,7 +38,7 @@ Public Class Body
         vel += CalculateAcceleration(Form1.bodies) * 0.5 * dt
         pos += vel * dt
         vel += CalculateAcceleration(Form1.bodies) * 0.5 * dt
-        colPos = OffsetPos(pos)
+        realPos = OffsetPos(pos)
     End Sub
 
     Function CalculateAcceleration(bodies As List(Of Body))
@@ -56,10 +56,10 @@ Public Class Body
         Return f
     End Function
 
-    Public Function IsColliding()
-        collider = distanceList(distanceList.Keys.Min())
-        Dim dist As Single = GetDistance(colPos, collider.colPos)
-        If dist < Me.size + collider.size Then
+    Public Function IsColliding(bo As Body)
+        'collider = bo
+        Dim dist As Single = GetDistance(realPos, bo.realPos)
+        If dist < Math.Max(Me.size, bo.size) Then
             Return True
         Else
             Return False
@@ -91,7 +91,7 @@ Public Class Body
     End Function
 
     Function OffsetPos(v As Vector2) As Vector2
-        Return New Vector2(v.X + size * 0.5, v.Y + size * 0.5)
+        Return New Vector2(v.X + (size * 0.5), v.Y + (size * 0.5))
     End Function
     Public Shared Operator =(ByVal b1 As Body, ByVal b2 As Body)
         If b1.ID = b2.ID Then
