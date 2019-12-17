@@ -109,5 +109,3 @@ Public Class Body
     End Operator
 
 End Class
-
-' TODO: for each body, calculate force and add to current force, then apply
