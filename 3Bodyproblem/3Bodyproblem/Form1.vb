@@ -4,7 +4,6 @@ Imports System.Windows
 
 Public Class Form1
     Public bodies As List(Of Body) = New List(Of Body)
-    Dim b1, b2 As Body
     Dim r As Random = New Random()
     Dim comOffset As Vector2
     Dim coms As List(Of Vector2) = New List(Of Vector2)
@@ -13,12 +12,7 @@ Public Class Form1
     Dim mousePos As Vector2
     Dim mouseDown As Boolean = False
     Dim forcev As Vector2
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        b1 = New Body(New Vector2(300, 300), New Vector2(-4, 3), 200, 7, RndColor(r.Next), 1)
-        b2 = New Body(New Vector2(600, 450), New Vector2(4, -1), 200, 7, RndColor(r.Next), 2)
-        'bodies.Add(b1)
-        'bodies.Add(b2)
-    End Sub
+    
     Function RndColor(seed As Integer)
         Dim red As Integer = r.Next(0, Byte.MaxValue + 1)
         Dim green As Integer = r.Next(0, Byte.MaxValue + 1)
