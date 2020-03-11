@@ -24,12 +24,12 @@ jobs:
       - name: Restore NuGet Packages
         run: nuget restore 3Bodyproblem/3Bodyproblem.sln
 
-      - name: Build FRSP
+      - name: Build 3BodyProblem
         run: msbuild 3Bodyproblem/3Bodyproblem.sln /p:Configuration=Release /p:DeployOnBuild=false
         
       - name: Upload Build
         uses: actions/upload-artifact@v1.0.0
         with:
-          name: FRSP2.exe
+          name: 3BodyProblem.exe
           path: 3Bodyproblem/3Bodyproblem/bin/Debug
           
